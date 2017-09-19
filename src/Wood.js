@@ -31,7 +31,7 @@ class WoodList extends Component {
     return (
       <div className="woodList">
         {woodsJSX}
-        <p>so what if I do this</p>
+        <p>and what about now?</p>
       </div>
     );
   }
