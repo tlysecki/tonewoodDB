@@ -21,7 +21,7 @@ const woods = [
   new WoodType('Western Red Cedar',true,false,'Thuja Plicata','350','Mostly found on classical guitars, Western Red Cedar is the most common type of cedar to be used on guitar tops. It isn\'t rare to see it used on a steel-string top, and shines where Sitka Spruce lacks - its overtones are rich and sparkling. It pairs best with players who use a light touch, and will hit an output limit quicker than spruce-topped guitars.'),
   new WoodType('Mahogany',true,true,'Swietenia or Khaya','950','There are many, many sources of mahogany, the most prominent being Central America and Africa. Mostly, their tonal characteristics are the same - plenty of midrange. Mahogany is likely the most common back and sides you\'ll find on solid wood acoustics. It is also the most common hardwood found on guitar tops. It is warm, can show figure, and is a great all-around choice.'),
   new WoodType('Rosewood, Indian',false,true,'Dalbergia Latifolia/Sisso','2440','Another classic back and side wood, Indian Rosewood is probably second only to mahogany in popularity. Comparing the two, Indian Rosewood has a broader tonal range, with more depth in the lows and brighter highs, and for that, it is to be a more articulate wood. While more sustainable than Brazilian Rosewood, it should be noted that as of January 1, 2017, all rosewood species were added to the CITES protection list.', ),
-  new WoodType('',false,false,'','',''),
+  new WoodType('Walnut',true,true,'Walnutius Treeicus','2','Testtesttest'),
   new WoodType('',false,false,'','',''),
   new WoodType('',false,false,'','',''),
   new WoodType('',false,false,'','',''),

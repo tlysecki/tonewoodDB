@@ -11,8 +11,10 @@ class App extends Component {
     this.showWoods = this.showWoods.bind(this)
   }
 
-  showWoods() {
-    window.location.reload()
+  showWoods(e) {
+    this.setState({
+      topOrBack: e
+    })
   }
 
   render() {
@@ -22,8 +24,9 @@ class App extends Component {
           <h1>Tonewood Database</h1>
         </header>
         <nav>
-          <Link to="/woods/top" onClick={this.showWoods}><button>Tops</button></Link>
-          <Link to="/woods/bns" onClick={this.showWoods}><button>Backs and Sides</button></Link>
+          <Link to="/woods/top" onClick={()=>this.showWoods('top')}><button className="navButton">Tops</button></Link>
+          <Link to="/woods/bns" onClick={()=>this.showWoods('back')}><button className="navButton">Backs and Sides</button></Link>
+          <Link to="/"><button className="navButton">Home</button></Link>
           {this.props.children}
         </nav>
       </div>

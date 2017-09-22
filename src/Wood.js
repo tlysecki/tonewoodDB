@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class WoodList extends Component {
   constructor() {
@@ -26,11 +27,17 @@ class WoodList extends Component {
   }
 
   showWood(wood) {
-    this.setState({
-      woodToShow: wood,
-      openInfo: !this.state.openInfo
-    })
-
+    if (wood !== this.state.woodToShow) {
+      this.setState({
+        woodToShow: wood,
+        openInfo: true
+      })
+    } if (wood === this.state.woodToShow) {
+      this.setState({
+        woodToShow: 'none',
+        openInfo: false
+      })
+    }
   }
 
   render() {
@@ -78,7 +85,7 @@ class Specs extends Component {
   render() {
     return (
       <div style={{ display: this.props.wood.name === this.props.selected ? 'block' : 'none' }}>
-        <ul className="woodDetails" style={{ display: this.props.openInfo ? 'block' : 'none'}}>
+        <ul className="woodDetails">
           <li>Species: {this.props.wood.species}</li>
           <li>Janka hardness: {this.props.wood.janka}</li>
           <li>{this.props.wood.description}</li>
