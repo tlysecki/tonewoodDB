@@ -42,7 +42,14 @@ class WoodList extends Component {
 
   render() {
 
-    const woods = this.props.route.woods;
+    const woods = this.props.route.woods.sort((a, b)=>{
+      var woodA=a.name.toLowerCase(), woodB=b.name.toLowerCase()
+      if (woodA < woodB) 
+          return -1 
+      if (woodA > woodB)
+          return 1
+      return 0
+    });
     const showTop = this.state.top;
     const showBack = this.state.back;
     let topWoodsJSX = '';

@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   showWoods(e) {
+    this.props.children.reload();
     this.setState({
       topOrBack: e
     })
