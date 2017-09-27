@@ -15,6 +15,7 @@ class WoodList extends Component {
 
   componentWillMount() {
     const topOrBack = window.location.pathname.split('/')[2]
+    console.log(this.props)
     if (topOrBack === 'top') {
       this.setState({
         top: true
@@ -24,6 +25,10 @@ class WoodList extends Component {
         back: true
       })
     }
+  }
+
+  shouldComponentUpdate() {
+    
   }
 
   showWood(wood) {
