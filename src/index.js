@@ -4,7 +4,8 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import './index.css';
 import App from './App';
 import About from './About';
-import Wood from './Wood';
+import BackWoods from './BackWoods';
+import TopWoods from './TopWoods';
 import registerServiceWorker from './registerServiceWorker';
 
 function WoodType(name,top,back,species,janka,description) {
@@ -31,7 +32,8 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={About} />
-      <Route path='woods/:woodtype' component={Wood} woods={woods} />
+      <Route path='woods/top' component={TopWoods} woods={woods} />  
+      <Route path='woods/back' component={BackWoods} woods={woods} />  
     </Route>
   </Router>, document.getElementById('root'));
 registerServiceWorker();

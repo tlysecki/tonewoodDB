@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class WoodList extends Component {
+class TopWoodList extends Component {
   constructor() {
     super();
     this.state = {
-      top: false,
-      back: false,
       woodToShow: '',
       openInfo: false
     }
     this.showWood = this.showWood.bind(this)
-  }
-
-  componentWillMount() {
-    const topOrBack = window.location.pathname.split('/')[2]
-    console.log(this.props)
-    if (topOrBack === 'top') {
-      this.setState({
-        top: true
-      })
-    } if (topOrBack === 'bns') {
-      this.setState({
-        back: true
-      })
-    }
-  }
-
-  shouldComponentUpdate() {
-    
   }
 
   showWood(wood) {
@@ -55,13 +35,9 @@ class WoodList extends Component {
           return 1
       return 0
     });
-    const showTop = this.state.top;
-    const showBack = this.state.back;
-    let topWoodsJSX = '';
-    let backWoodsJSX = '';
-    if (showTop) {
-      topWoodsJSX = woods.map((wood, i) => {
-        return <div className="WoodType" key={i} style={{ display: showTop === wood.top ? 'block' : 'none' }}>
+
+    let topWoodsJSX = woods.map((wood, i) => {
+        return <div className="WoodType" key={i} style={{ display: wood.top ? 'block' : 'none' }}>
           <ul className="tops">
             <li className="woodName" onClick={() => this.showWood(wood.name)}>{wood.name}
               <Specs wood={wood} selected={this.state.woodToShow} openInfo={this.state.openInfo} />
@@ -69,29 +45,16 @@ class WoodList extends Component {
           </ul>
         </div>
       })
-    }
-    if (showBack) {
-      backWoodsJSX = woods.map((wood, i) => {
-        return <div className="WoodType" key={i} style={{ display: showBack === wood.back ? 'block' : 'none' }}>
-          <ul className="backs">
-            <li className="woodName" onClick={() => this.showWood(wood.name)}>{wood.name}
-              <Specs wood={wood} selected={this.state.woodToShow} openInfo={this.state.openInfo} />
-            </li>
-          </ul>
-        </div>
-      })
-    }
 
     return (
-      <div className="woodList">
+      <div className="topWoodList">
         {topWoodsJSX}
-        {backWoodsJSX}
       </div>
     );
   }
 }
 
-export default WoodList;
+export default TopWoodList;
 
 class Specs extends Component {
   render() {
