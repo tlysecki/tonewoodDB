@@ -6,15 +6,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      topOrBack: 'none'
+      searchOpen: false,
+      searchTerm: ''
     }
-    this.showWoods = this.showWoods.bind(this)
+    this.openSearch = this.openSearch.bind(this)
   }
 
-  showWoods(e) {
-    // this.props.children.reload();
+  openSearch() {
     this.setState({
-      topOrBack: e
+      searchOpen: !this.state.searchOpen
     })
   }
 
@@ -26,11 +26,16 @@ class App extends Component {
           <h1>Tonewood Database</h1>
         </header>
         <nav>
-          <Link to="/woods/top" onMouseOver={()=>this.showWoods('top')}><button className="navButton">Tops</button></Link>
-          <Link to="/woods/back" onMouseOver={()=>this.showWoods('back')}><button className="navButton">Backs and Sides</button></Link>
+          <Link to="/woods/top"><button className="navButton">Tops</button></Link>
+          <Link to="/woods/back"><button className="navButton">Backs and Sides</button></Link>
           <Link to="/"><button className="navButton">Home</button></Link>
-          <button className="navButton">Search</button>
+          <button className="navButton" onClick={this.openSearch}>Search</button>
+            <input type="text" 
+                   ref="searchText" 
+                   placeholder="Enter your search term"
+                   style={{display: this.state.searchOpen ? 'block' : 'none' }}/>
         </nav>
+        <div className="showWoods"></div>
         {this.props.children}
       </div>
     );
