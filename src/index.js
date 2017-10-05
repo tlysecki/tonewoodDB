@@ -30,7 +30,7 @@ const woods = [
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path="/" component={App} woods={woods}>
       <IndexRoute component={About} />
       <Route path='woods/top' component={TopWoods} woods={woods} />  
       <Route path='woods/back' component={BackWoods} woods={woods} />  
