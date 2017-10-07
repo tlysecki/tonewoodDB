@@ -87,20 +87,23 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1 className="title">Tonewood Database</h1>
+          <h1 className="titleLg">Acoustic Tonewood Guide</h1>
+          <h1 className="titleSm">ATG</h1>
           <nav className="navigation">
             <Link to="/woods/top"><button className="navButton" onClick={this.cancelSearch}>Tops</button></Link>
             <Link to="/woods/back"><button className="navButton" onClick={this.cancelSearch}>Backs and Sides</button></Link>
             <Link to="/"><button className="navButton" onClick={this.cancelSearch}>Home</button></Link>
             <button className="navButton" onClick={this.openSearch}>{searchButton}</button>
           </nav>
-          <input type="text"
-              className="woodSearch"
-              ref="searchText"
-              onKeyUp={() => this.searchWood(this.refs.searchText.value)}
-              placeholder="Enter your search term"
-              style={{ display: this.state.searchOpen ? 'inline-block' : 'none' }} />
         </header>
+        <div className="search">
+          <input type="search"
+            className="woodSearch"
+            ref="searchText"
+            onKeyUp={() => this.searchWood(this.refs.searchText.value)}
+            placeholder="Enter your search term"
+            style={{ display: this.state.searchOpen ? 'inline-block' : 'none' }} />
+        </div>
         <div className="showWoods" style={{ display: this.state.searchOpen && this.state.searchTerm ? 'none' : 'block' }}>
           {this.props.children}
         </div>

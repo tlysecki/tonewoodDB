@@ -1,45 +1,89 @@
-.App {
-  text-align: center;
+@media (max-width: 480px) {
+  .titleSm {
+    display: block;
+  }
+  .titleLg {
+    display: none
+  }
+}
+@media (min-width: 481px) {
+  .titleSm {
+    display: none
+  }
+  .titleLg {
+    display: block
+  }
 }
 
 header {
-  color: white;
-  background-color: black;
+  color: #F7F3E3;
+  background-color: #011638;
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 12vh;
 }
 
 .showWoods, .searchResults {
-  padding: 10px 100px 0px 100px;
+  padding: 15vh 10vw 0vh 10vw;
+  font-family: 'Open Sans', sans-serif;  
+}
+
+.foundWoods, .tops, .backs {
+  list-style: none;  
+}
+
+.woodName {
+  padding: 5px 0px 5px 5px;
+  margin: -15px 0px -15px 0px;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+.woodDetails {
+  font-size: 0.8em;
+  list-style: disc;
+  padding-top: 5px;
 }
 
 .woodName:hover {
   cursor: default;
+  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0))
 }
 
 .navButton {
-  margin-top: 11px;
-  background-color: rgba(0,0,0,1);
-  color: white;
+  background-color: rgba(1, 22, 56, 1);
+  color: #F7F3E3;
   border: none;
-  border-radius: 0px;
-  line-height: 100%;
-  height: 4vh;
+  border-radius: 1px;
+  height: 100%;
   overflow: hidden;
 }
 
 .navButton:hover {
-  background-color: rgba(255,255,255,0.8);
+  background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(0,0,0,0))
 }
 
-.title {
-  display: inline;
+.navButton:focus {
+  outline: none;
+}
+
+.titleLg, .titleSm {
+  font-family: 'Prata', serif;
+  font-size: 2em;
+  padding-left: 15px;
+  margin-top: 10px;
 }
 
 .navigation {
-  display: inline;
-  float: right;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 10;
 }
 
 .woodSearch {
+  margin-top: 100px;
   width: 100vw;
   height: 8vh;
   padding-left: 20px;
