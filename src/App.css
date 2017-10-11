@@ -5,6 +5,12 @@
   .titleLg {
     display: none
   }
+  .woodDetails {
+    margin-left: -6vw;
+  }
+  .about h2 {
+    font-size: 1.8em
+  }
 }
 @media (min-width: 481px) {
   .titleSm {
@@ -13,20 +19,34 @@
   .titleLg {
     display: block
   }
+  .woodDetails {
+    margin-left: 15vw;
+  }
+  .about h2 {
+    font-size: 2.2em
+  }
 }
 
 header {
   color: #F7F3E3;
   background-color: #011638;
   position: fixed;
-  display: block;
   width: 100vw;
+  display: block;
   height: 12vh;
 }
 
+.about {
+  margin-top: 0vh;
+}
+
 .showWoods, .searchResults {
-  padding: 15vh 10vw 0vh 10vw;
-  font-family: 'Open Sans', sans-serif;  
+  position: absolute;
+  z-index: -1;
+  top: 22vh;
+  padding: 0vh 10vw 0vh 10vw;
+  font-family: 'Open Sans', sans-serif;
+  color: #2C2B31
 }
 
 .foundWoods, .tops, .backs {
@@ -34,7 +54,7 @@ header {
 }
 
 .woodName {
-  padding: 5px 0px 5px 5px;
+  padding: 5px 10px 5px 5px;
   margin: -15px 0px -15px 0px;
   border-radius: 3px;
   font-size: 1.2em;
@@ -46,9 +66,15 @@ header {
   padding-top: 5px;
 }
 
+@keyframes woodHover {
+  from { background: grey}
+  to { background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0))}
+}
+
 .woodName:hover {
   cursor: default;
-  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0))
+  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+  animation: woodHover 500ms;
 }
 
 .navButton {
@@ -56,8 +82,6 @@ header {
   color: #F7F3E3;
   border: none;
   border-radius: 1px;
-  height: 100%;
-  overflow: hidden;
 }
 
 .navButton:hover {
@@ -70,20 +94,28 @@ header {
 
 .titleLg, .titleSm {
   font-family: 'Prata', serif;
-  font-size: 2em;
   padding-left: 15px;
-  margin-top: 10px;
+  padding-top: 15px;
+  margin-top: 0px;
+}
+
+.titleLg {
+  font-size: 2em;
+}
+
+.titleSm {
+  font-size: 2.3em;
+  padding-left: 10vw;
 }
 
 .navigation {
   display: block;
-  position: absolute;
-  bottom: 0;
-  right: 10;
+  position: fixed;
+  right: 0;
+  top: 8vh;
 }
 
 .woodSearch {
-  margin-top: 100px;
   width: 100vw;
   height: 8vh;
   padding-left: 20px;

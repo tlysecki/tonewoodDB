@@ -87,6 +87,8 @@ class App extends Component {
     return (
       <div className="container">
         <header>
+
+
           <h1 className="titleLg">Acoustic Tonewood Guide</h1>
           <h1 className="titleSm">ATG</h1>
           <nav className="navigation">
