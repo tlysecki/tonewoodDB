@@ -39,7 +39,7 @@ class App extends Component {
     if (wood !== this.state.woodToShow) {
       this.setState({
         woodToShow: wood,
-        openInfo: true
+        openInfo: true,
       })
     } if (wood === this.state.woodToShow) {
       this.setState({

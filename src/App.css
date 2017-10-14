@@ -11,6 +11,10 @@
   .about h2 {
     font-size: 1.8em
   }
+  .woodSearch{
+    position: fixed;
+    bottom: 0;
+  }
 }
 @media (min-width: 481px) {
   .titleSm {
@@ -25,6 +29,10 @@
   .about h2 {
     font-size: 2.2em
   }
+  .woodSearch {
+    position: relative;
+    margin-top: 12vh;
+  }
 }
 
 header {
@@ -33,7 +41,7 @@ header {
   position: fixed;
   width: 100vw;
   display: block;
-  height: 12vh;
+  height: 4.6em;
 }
 
 .about {
@@ -95,7 +103,7 @@ header {
 .titleLg, .titleSm {
   font-family: 'Prata', serif;
   padding-left: 15px;
-  padding-top: 15px;
+  padding-top: 10px;
   margin-top: 0px;
 }
 
@@ -112,12 +120,12 @@ header {
   display: block;
   position: fixed;
   right: 0;
-  top: 8vh;
+  top: 3.2em;
 }
 
 .woodSearch {
   width: 100vw;
-  height: 8vh;
+  height: 2.5em;
   padding-left: 20px;
   font-size: 20px;
 }
