@@ -61,8 +61,8 @@ class Specs extends Component {
     return (
       <div style={{ display: this.props.wood.name === this.props.selected ? 'block' : 'none' }}>
         <ul className="woodDetails">
-          <li>Species: {this.props.wood.species}</li>
-          <li>Janka hardness: {this.props.wood.janka}</li>
+          <li><strong>Species</strong>: {this.props.wood.species}</li>
+          <li><strong>Janka hardness:</strong> {this.props.wood.janka}</li>
           <li>{this.props.wood.description}</li>
         </ul>
       </div>

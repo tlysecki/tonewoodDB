@@ -23,9 +23,9 @@ class App extends Component {
   }
 
   searchWood(term) {
-    let cased = term.toLowerCase();
+    let casedTerm = term.toLowerCase();
     this.setState({
-      searchTerm: cased
+      searchTerm: casedTerm
     })
   }
 
@@ -51,7 +51,7 @@ class App extends Component {
 
   render() {
 
-    let searchButton = ''
+    let searchButton = '';
     if (!this.state.searchOpen) {
       searchButton = 'Live Search'
     } else {
@@ -70,8 +70,8 @@ class App extends Component {
         return 0
       });
 
-    let searchResultsJSX = searchedWoods.map((wood, i) => {
-      return <div className="WoodType" key={i}>
+    let searchResultsJSX = searchedWoods.map((wood, i) => (
+      <div className="WoodType" key={i}>
         <ul className="foundWoods">
           <li className="woodName" onClick={() => this.showWood(wood.name)}>{wood.name}
             <ul className="woodDetails" style={{ display: wood.name === this.state.woodToShow ? 'block' : 'none' }}>
@@ -82,7 +82,7 @@ class App extends Component {
           </li>
         </ul>
       </div>
-    })
+    ))
 
     return (
       <div className="container">
